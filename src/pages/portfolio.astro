@@ -1,0 +1,55 @@
+---
+const frontmatter = {
+  title: "Portfolio",
+  description: "My latest projects and work"
+};
+
+const projects = [
+  {
+    title: "Project 1",
+    description: "A description of project 1",
+    technologies: ["Astro", "React", "Tailwind CSS"],
+    image: "/images/project1.jpg",
+    link: "https://project1.example.com"
+  },
+  {
+    title: "Project 2",
+    description: "A description of project 2",
+    technologies: ["JavaScript", "Node.js", "MongoDB"],
+    image: "/images/project2.jpg",
+    link: "https://project2.example.com"
+  },
+  {
+    title: "Project 3",
+    description: "A description of project 3",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    image: "/images/project3.jpg",
+    link: "https://project3.example.com"
+  }
+];
+---
+
+<main class="container mx-auto px-4 py-12">
+  <section>
+    <h1 class="text-4xl font-bold mb-8">Portfolio</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <img src={project.image} alt={project.title} class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h2 class="text-xl font-semibold mb-2">{project.title}</h2>
+          <p class="text-gray-600 mb-4">{project.description}</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map(tech => (
+              <span class="px-2 py-1 bg-gray-100 rounded text-sm">{tech}</span>
+            ))}
+          </div>
+          <a href={project.link} class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800">
+            View Project
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+</main>

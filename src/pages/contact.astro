@@ -1,0 +1,69 @@
+---
+const frontmatter = {
+  title: "Contact",
+  description: "Get in touch with me"
+};
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const handleSubmit = async (formData: FormData) => {
+  // TODO: Implement form submission logic
+  console.log('Form submitted:', formData);
+};
+---
+
+<main class="container mx-auto px-4 py-12">
+  <section>
+    <h1 class="text-4xl font-bold mb-8">Contact Me</h1>
+    
+    <div class="max-w-2xl mx-auto">
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        const formData = {
+          name: (e.target.elements.name as HTMLInputElement).value,
+          email: (e.target.elements.email as HTMLInputElement).value,
+          message: (e.target.elements.message as HTMLTextAreaElement).value
+        };
+        handleSubmit(formData);
+      }} class="space-y-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+          <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+          <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+        </div>
+
+        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="mt-16">
+    <h2 class="text-2xl font-bold mb-8">Social Links</h2>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="https://github.com/motoakitom" class="text-gray-600 hover:text-gray-900">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://twitter.com/motoakitom" class="text-gray-600 hover:text-gray-900">
+        <i class="fab fa-twitter fa-2x"></i>
+      </a>
+      <a href="mailto:motoxii@live.jp" class="text-gray-600 hover:text-gray-900">
+        <i class="fas fa-envelope fa-2x"></i>
+      </a>
+    </div>
+  </section>
+</main>

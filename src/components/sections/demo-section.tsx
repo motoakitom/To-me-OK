@@ -128,7 +128,7 @@ export function DemoSection() {
                 <Sun className={`h-5 w-5 ${
                   isDarkMode ? 'text-gray-400' : 'text-yellow-500'
                 }`} />
-                <div className="relative">
+                <div className="relative flex items-center">
                   <input
                     type="checkbox"
                     checked={isDarkMode}
@@ -141,9 +141,7 @@ export function DemoSection() {
                       isDarkMode ? 'bg-blue-600' : 'bg-gray-300'
                     }`}
                   >
-                    <div className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 mt-1 ${
-                      isDarkMode ? 'translate-x-7 ml-1' : 'translate-x-1 ml-1'
-                    }`} />
+                    <div className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 absolute top-1/2 -translate-y-1/2 ${isDarkMode ? 'translate-x-[calc(100%+0.25rem)]' : 'translate-x-1'}`} />
                   </div>
                 </div>
                 <Moon className={`h-5 w-5 ${

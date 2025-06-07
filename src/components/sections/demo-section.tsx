@@ -80,7 +80,7 @@ export function DemoSection() {
   }
 
   return (
-    <section id="demo" className={`py-16 md:py-20 transition-colors duration-500 ${
+    <section data-section="demo" id="demo" className={`py-16 md:py-20 transition-colors duration-500 ${
       isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -499,3 +499,6 @@ export function DemoSection() {
     </section>
   )
 }
+
+// コンポーネントの表示名を設定
+DemoSection.displayName = 'DemoSection: デモ機能を体験できるインタラクティブセクション';

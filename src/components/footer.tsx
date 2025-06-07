@@ -23,20 +23,13 @@ export function Footer() {
       { name: 'よくある質問', href: '#' },
       { name: 'サポート', href: '#' },
       { name: 'お問い合わせ', href: '#contact' },
-      { name: 'ブログ', href: '#' },
     ],
   }
-
-  const socialLinks = [
-    { name: 'Twitter', href: '#', icon: Twitter },
-    { name: 'LinkedIn', href: '#', icon: Linkedin },
-    { name: 'GitHub', href: '#', icon: Github },
-  ]
 
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {/* 会社情報 */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
@@ -70,7 +63,7 @@ export function Footer() {
           </div>
 
           {/* サービス */}
-          <div>
+          <div className="mt-8 sm:mt-0">
             <h3 className="text-lg font-semibold mb-4">サービス</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
@@ -87,7 +80,7 @@ export function Footer() {
           </div>
 
           {/* 会社 */}
-          <div>
+          <div className="mt-8 sm:mt-0">
             <h3 className="text-lg font-semibold mb-4">会社</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
@@ -104,7 +97,7 @@ export function Footer() {
           </div>
 
           {/* サポート */}
-          <div>
+          <div className="mt-8 sm:mt-0 lg:mt-0">
             <h3 className="text-lg font-semibold mb-4">サポート</h3>
             <ul className="space-y-2 mb-6">
               {footerLinks.support.map((link) => (
@@ -118,45 +111,25 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            
-            {/* ソーシャルリンク */}
-            <div>
-              <h4 className="text-sm font-semibold mb-3 text-gray-300">フォローする</h4>
-              <div className="flex space-x-3">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon
-                  return (
-                    <Link
-                      key={social.name}
-                      href={social.href}
-                      className="text-gray-400 hover:text-white transition-colors"
-                      aria-label={social.name}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </Link>
-                  )
-                })}
-              </div>
-            </div>
           </div>
         </div>
 
         {/* 下部 */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm text-center sm:text-left">
               © {currentYear} To me OK. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors text-sm">
-          プライバシーポリシー
-        </Link>
-        <Link href="/terms" className="text-gray-400 hover:text-white transition-colors text-sm">
-          利用規約
-        </Link>
-        <Link href="/sitemap" className="text-gray-400 hover:text-white transition-colors text-sm">
-          サイトマップ
-        </Link>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-4 sm:mt-0">
+              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors text-sm whitespace-nowrap">
+                プライバシーポリシー
+              </Link>
+              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors text-sm whitespace-nowrap">
+                利用規約
+              </Link>
+              <Link href="/sitemap" className="text-gray-400 hover:text-white transition-colors text-sm whitespace-nowrap">
+                サイトマップ
+              </Link>
             </div>
           </div>
         </div>

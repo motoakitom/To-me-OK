@@ -107,7 +107,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-16 md:py-20 bg-white dark:bg-gray-900">
+    <section data-section="contact" id="contact" className="py-16 md:py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* セクションヘッダー */}
         <motion.div
@@ -436,3 +436,6 @@ export function ContactSection() {
     </section>
   )
 }
+
+// コンポーネントの表示名を設定
+ContactSection.displayName = 'ContactSection: お問い合わせフォームを表示するセクション';

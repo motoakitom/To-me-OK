@@ -41,7 +41,7 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
+    <section data-section="testimonials" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* セクションヘッダー */}
         <motion.div
@@ -127,57 +127,13 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        {/* 統計情報 */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-                98%
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                顧客満足度
-              </p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-                95%
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                継続利用率
-              </p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
-                200%
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                平均売上向上率
-              </p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">
-                50%
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                開発期間短縮
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-16"
         >
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
             あなたのビジネスも次のレベルへ。まずは無料相談から始めませんか？
@@ -193,3 +149,6 @@ export function TestimonialsSection() {
     </section>
   )
 }
+
+// コンポーネントの表示名を設定
+TestimonialsSection.displayName = 'TestimonialsSection: お客様の声を表示するセクション';

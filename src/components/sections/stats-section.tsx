@@ -48,20 +48,6 @@ export function StatsSection() {
       description: '継続率95%以上'
     },
     {
-      icon: TrendingUp,
-      value: 300,
-      suffix: '+',
-      label: '制作実績',
-      description: '様々な業界に対応'
-    },
-    {
-      icon: Clock,
-      value: 50,
-      suffix: '%',
-      label: '開発期間短縮',
-      description: 'AI活用による効率化'
-    },
-    {
       icon: Award,
       value: 98,
       suffix: '%',
@@ -92,7 +78,7 @@ export function StatsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             return (
@@ -105,20 +91,20 @@ export function StatsSection() {
                 className="text-center group"
               >
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 mx-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="h-8 w-8 md:h-9 md:w-9 text-white" />
                   </div>
-                  <div className="absolute inset-0 w-16 h-16 mx-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                  <div className="absolute inset-0 w-16 h-16 md:w-20 md:h-20 mx-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                 </div>
                 
                 <div className="space-y-2">
                   <div className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
                     <Counter end={stat.value} suffix={stat.suffix} />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                     {stat.label}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
                     {stat.description}
                   </p>
                 </div>
@@ -139,7 +125,7 @@ export function StatsSection() {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               なぜTo me OKが選ばれるのか
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
               <div className="space-y-2">
                 <h4 className="font-semibold text-gray-900 dark:text-white">🚀 高速開発</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -165,3 +151,7 @@ export function StatsSection() {
     </section>
   )
 }
+
+// コンポーネントの表示名を設定
+StatsSection.displayName = 'StatsSection: 実績を数字で表示する統計セクション';
+Counter.displayName = 'Counter: カウントアップアニメーション付きの数値表示コンポーネント';

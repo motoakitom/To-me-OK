@@ -12,15 +12,15 @@ export function HeroSection() {
   ]
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg">
+    <section data-section="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg">
       {/* 背景アニメーション */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-40 h-40 md:w-80 md:h-80 md:-top-40 md:-right-40 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" />
-        <div className="absolute -bottom-20 -left-20 w-40 h-40 md:w-80 md:h-80 md:-bottom-40 md:-left-40 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000" />
-        <div className="absolute top-20 left-20 w-40 h-40 md:w-80 md:h-80 md:top-40 md:left-40 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000" />
+        <div className="absolute -top-12 -right-12 w-48 h-48 md:w-72 md:h-72 md:-top-24 md:-right-24 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob" />
+        <div className="absolute -bottom-12 -left-12 w-48 h-48 md:w-72 md:h-72 md:-bottom-24 md:-left-24 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob animation-delay-2000" />
+        <div className="absolute top-24 left-1/4 w-48 h-48 md:w-72 md:h-72 md:top-1/4 md:left-1/3 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob animation-delay-4000" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export function HeroSection() {
               <Sparkles className="h-8 w-8 text-yellow-500 animate-pulse" />
             </motion.div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent">
                 最新の機能を
               </span>
@@ -50,7 +50,7 @@ export function HeroSection() {
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 mt-4">
               AIの力で開発コストを削減し、最新技術を使った高品質なWebサイトを
               <br className="hidden sm:block" />
               従来の半額以下で提供します
@@ -107,3 +107,5 @@ export function HeroSection() {
     </section>
   )
 }
+
+HeroSection.displayName = 'HeroSection: トップのヒーローセクション（メインビジュアル）';
